@@ -1,0 +1,17 @@
+name: First Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test-jobs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check Out Code
+        uses: actions/checkout@4
+
+      - name: Print Message
+        run: echo "github actions working"
