@@ -15,3 +15,20 @@ jobs:
 
       - name: Print Message
         run: echo "github actions working"
+
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Code
+        uses: actions/checkout@v4
+
+      - name: Setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: pip Install -r requirements.txt
+
+      - name: Run install test
+        run: python app.py
